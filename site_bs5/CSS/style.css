@@ -1,0 +1,179 @@
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+
+/* анимация прелоадинга */
+.animationLoader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: #181818;
+  z-index: 1001;
+
+}
+
+.animationLoader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -45px;
+  margin-left: -45px;
+  text-align: center;
+  animation: animationLoader-rotate 2s both linear;
+}
+
+ 
+
+@keyframes animationLoader-rotate {
+  0% {
+    transform: scale(7) rotateZ(0);
+  }
+  50% {
+    transform: scale(4) rotateZ(180deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+
+.animation_hiding .animationLoader {
+  transition: 2s opacity;
+  opacity: 0;
+}
+
+ 
+
+.animation .animationLoader {
+  display: none;
+}
+/* конец анимации прелоадинга */
+
+
+#typewriter {
+  width: 10ch;
+  animation: typing 2.2s steps(10), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+  margin-top: 30vh;
+  position: absolute;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+
+
+h2 {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.box1 {
+  margin: 2rem 0;
+  transform: translateY(100px);
+  opacity: 0;
+  animation: appear 2.5s forwards;
+  animation-delay: 4s;
+}
+
+@keyframes appear {
+  0% {opacity: 0;}
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.col-2 {
+  height: 50vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+  /* end of centering */
+  opacity: 1;
+  animation: hiding 2s forwards;
+  animation-delay: 3s;
+}
+
+@keyframes hiding {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+    transfrom: translateY(-100px);
+    disply: none;
+  }
+}
+
+
+#row-hide {
+  opacity: 1;
+  animation: hiding_row 2s forwards;
+  animation-delay: 3s;
+}
+
+@keyframes hiding_row {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    /* transform: translateX(-999999999px); */
+  }
+}
+
+.chart-container {
+  margin-top: 1%;
+  height: 10%;
+}
+
+.col {
+  text-align: center;
+  align-items: center;
+}
+
+
+/* анимация кнопок навбара */
+
+#menu_button:hover {
+  box-shadow: 0 5px 20px 0px rgba(239, 174, 11, 0.587);
+}
+
+.btn .btn-inline-warning {
+  font-size: 200px;
+  color: rgb(68, 0, 255);
+}
+
+.box2 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.box2.element-show {
+  opacity: 1;
+  transition: all 1.5s;
+  transform: translateY(0%);
+}
