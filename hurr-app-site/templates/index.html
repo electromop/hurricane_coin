@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hurricane | Crypto</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/style.css', v=1)}}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    <body data-bs-theme="dark">
+    <!-- <body> -->
+
+        <!-- <div class="animationLoader">
+            <img src="logos\hurricain_coin_transp.png", class="animationLoader__image"  width="75", height="75">
+            <script src="/scripts/preloading.js"></script>
+        </div> -->
+ 
+        <header>
+            <nav class="navbar navbar-expand-md bg-body-secondary rounded-2 mx-md-2 my-md-1 fixed-top">
+                <div class="container-md">
+                    <a class="navbar-brand ms-2" aria-current="page" href="#"><img src="{{ url_for('static', filename='logos/main_logo.svg') }}" alt="" width="65" heigth="65" class="d-inline-block align-text-top"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end me-2" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                                <a class="btn btn-outline-warning rounded-5 px-4 me-3" id="menu_button" aria-current="page" href="#" role="button">Coin</a>
+                                <a class="btn btn-outline-warning rounded-5 px-3 me-3" id="menu_button" href="#" role="button">Game</a>
+                                <a class="btn btn-outline-warning rounded-5 px-3" id="menu_button" href="#" role="button">About us</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="container-md my-5">
+                <div class="row justify-content-center rounded-1 z-0" id="row-hide">
+                    <div class="col-sm-1 col-md-2 mt-5 d-flex justify-content-center">
+                        <h1 id="typewriter">Hi &ltuser&gt!</h1>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="container-md justify-content-center rounded-1 h-100">
+                        <div class="row py-3 my-3">
+                            <div class="col-sm-12 col-md-6">
+                                <h1>$HURRICANE is the best way to increase money value on your wallet.</h1>
+                                <h3 style="color:rgb(90, 90, 90);">Play our wonderful and witty RPG game and earn money!</h3>
+                            </div>
+                        </div>   
+                        <div class="row py-2 py-md-5 mt-5">
+                            <div class="col-12 mt-3 d-flex justify-content-around justify-content-md-start">
+                                <button href='#game' class="btn btn-warning mx-2 w-md-25 w-75 h-100 rounded-3 d-flex justify-content-center" type="button" style="max-width:200px; max-height: 100px; margin-left: auto;"><h3 style="color: black;">Game</h3></button>
+                                <button href='#news' class="d-none d-md-block btn btn-warning mx-2 w-md-25 w-75 h-100 rounded-3 d-flex justify-content-center" type="button" style="max-width:200px; max-height: 100px;"><h3 style="color: black;">News</h3></button>
+                            </div>
+                        </div>
+                        <div class="row py-2 py-md-5 mt-auto d-md-none">
+                            <div class="col-12 d-flex justify-content-around justify-content-md-start">
+                                <button href='#news' class="btn btn-warning mx-2 w-md-25 w-75 h-100 rounded-3 d-flex justify-content-center" type="button" style="max-width:200px; max-height: 100px;"><h3 style="color: black;">News</h3></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!-- whitepaper -->
+        </section>
+        <section>
+            <div class="container-md my-5 box1" style="margin-top:20%;">
+                <div class="row justify-content-md-center rounded-1 shadow bg-body-tertiary">
+                    <div class="col-md-4">
+                        <div class="row d-block bg-body-tertiary mt-1">
+                            <h4>Tokenomics</h4>
+                            <p>With a fixed total supply (number of coins) of tokens and our burn functionality
+                            built into the smart contract, holders gain the value of holding coins in their wallets.</p>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block col-md-8 mt-4">
+                        <div class="chart-container" style="width: 100%; margin-left: auto;">
+                            <canvas id="myChart">
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+                                <script src="{{ url_for('static', filename='scripts/graphics.js') }}"></script>
+                            </canvas>
+                        </div>
+                    </div>
+                    <div class="d-md-none col-sm-12 mt-4">
+                        <div class="chart-container" style="width: 100%; margin-right: auto;">
+                            <canvas id="myChart1">
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+                                <script src="{{ url_for('static', filename='scripts/graphics1.js') }}"></script>
+                            </canvas>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container-md box2 shadow rounded-2 bg-body-tertiary d-none d-md-block my-5 h-50">
+                <div class="row">
+                    <div class="col">
+                        <h1>Team</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-4 d-flex justify-content-end pt-3 pb-5">
+                                        <div class="card my-2" style="width: 15rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 1</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-center pt-3 pb-5">
+                                        <div class="card my-2" style="width: 15rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 2</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-start pt-3 pb-5">
+                                        <div class="card my-2" style="width: 15rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 3</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-4 d-flex justify-content-end pt-3 pb-5">
+                                        <div class="card my-2" style="width: 15rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 4</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-center pt-3 pb-5">
+                                        <div class="card my-2" style="width: 15rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 5</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-start pt-3 pb-5">
+                                        <div class="card my-2" style="width: 15rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 6</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-md box2 shadow rounded-2 bg-body-tertiary d-md-none my-5 h-50">
+                <div class="row">
+                    <div class="col">
+                        <h1>Team</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="carousel" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-10 d-flex justify-content-center t-3 pb-4">
+                                        <div class="card my-2" style="width: 18rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 1</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-10 d-flex justify-content-center t-3 pb-4">
+                                        <div class="card my-2" style="width: 18rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 2</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-10 d-flex justify-content-center t-3 pb-4">
+                                        <div class="card my-2" style="width: 18rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 3</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-10 d-flex justify-content-center t-3 pb-4">
+                                        <div class="card my-2" style="width: 18rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 4</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-10 d-flex justify-content-center t-3 pb-4">
+                                        <div class="card my-2" style="width: 18rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 5</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-10 d-flex justify-content-center t-3 pb-4">
+                                        <div class="card my-2" style="width: 18rem;">
+                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card 6</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container-md my-5 box2">
+                <div class="row rounded-1 shadow bg-body-tertiary">
+                    <div class="col-3 col-md-5">
+                        <img src="{{ url_for('static', filename='logos/pxtornado.png') }}" style="width:80%; max-width: 140px; margin-top: 5%">
+                    </div>
+                    <div class="col-9 col-md-7">
+                        <div class="accordion accordion" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h5 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Item #1
+                                </button>
+                                </h5>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h5 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    Item #2
+                                </button>
+                                </h5>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h5 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    Item #3
+                                </button>
+                                </h5>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="{{ url_for('static', filename='scripts/preloading.js') }}"></script>
+        <script src="{{ url_for('static', filename='scripts/anim_unhide.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    </body>
+</html>
