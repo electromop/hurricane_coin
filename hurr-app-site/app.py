@@ -33,7 +33,7 @@ def fill_bd():
         with open(r'C:\Users\mlips\code\git\hurricane_coin\hurr-app-site\data\currency.json', 'w') as j:
             j.write(json.dumps(currencyInfo))
     
-        time.sleep(60.0)
+        time.sleep(59.0)
 
 api_key = "EtJjji5mbKKcsN3YvnvUCDAEV8vRr23NXRtXokoQMj4okFcNAFGM5Jr1dOFSbPMk"
 params = {
