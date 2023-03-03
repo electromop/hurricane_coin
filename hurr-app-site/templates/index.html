@@ -76,7 +76,7 @@
                             <div class="chart-container" style="width: 100%; margin-left: auto;">
                                 <canvas id="myChart">
                                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-                                    <script src="{{ url_for('static', filename='scripts/graphics.js') }}"></script>
+                                    <script type="module" src="{{ url_for('static', filename='scripts/graphics.js') }}"></script>
                                 </canvas>
                             </div>
                     </div>
@@ -84,7 +84,7 @@
                         <div class="chart-container" style="width: 100%; margin-right: auto;">
                             <canvas id="myChart">
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-                                <script src="{{ url_for('static', filename='scripts/graphics1.js') }}"></script>
+                                <script type ="module" src="{{ url_for('static', filename='scripts/graphics1.js') }}"></script>
                             </canvas>
                         </div>
                     </div> 
