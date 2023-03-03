@@ -1,5 +1,5 @@
-Chart.defaults.global.legend.display = false;
-var ctx = document.getElementById("myChart");
+// Chart.defaults.global.legend.display = false;
+// var ctx = document.getElementById("myChart");
 
 let ethPrice = []; // массив для хранения курса ефириума
 let updateTimes = []; // массив для хранения времени обновления курса
@@ -21,26 +21,26 @@ function updateEthPrice() {
       updateTimes.push(Object.keys(data)[0].slice(10));
       console.log('Eth price updated:', ethPrice, updateTimes);
         
-      var myChart = new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: updateTimes,
-          datasets: [
-            {
-              label: "Hurricane Price",
-              data: ethPrice,
-              backgroundColor: "RGBA(255,145,0,1)",
-              borderColor: "RGBA(255,145,0,1)",
-              color: '#FFFFFF',
-              borderWidth: 1,
-              fill: false,
-              lineTension: 0.3
-            }
-          ]
-        }
-      });
+    //   var myChart = new Chart(ctx, {
+    //     type: "line",
+    //     data: {
+    //       labels: updateTimes,
+    //       datasets: [
+    //         {
+    //           label: "Hurricane Price",
+    //           data: ethPrice,
+    //           backgroundColor: "RGBA(255,145,0,1)",
+    //           borderColor: "RGBA(255,145,0,1)",
+    //           color: '#FFFFFF',
+    //           borderWidth: 1,
+    //           fill: false,
+    //           lineTension: 0.3
+    //         }
+    //       ]
+    //     }
+    //   });
   });
-}
+} 
 
 // вызываем функцию updateEthPrice каждый час
 setInterval(updateEthPrice, 5 * 1000);
