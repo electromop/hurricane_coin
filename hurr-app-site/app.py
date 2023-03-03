@@ -2,7 +2,7 @@ from flask import Flask, jsonify, render_template
 import json
 
 def openCData():
-    with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json') as c:
+    with open(r'C:\Users\mlips\code\git\hurricane_coin\hurr-app-site\data\currency.json') as c:
         currencyInfo = json.load(c)
         return currencyInfo
 
