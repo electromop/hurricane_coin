@@ -1,6 +1,6 @@
 from moralis import evm_api
 import datetime, time
-import json, os
+import json
 
 def get_price(params):
     price = evm_api.token.get_token_price(
