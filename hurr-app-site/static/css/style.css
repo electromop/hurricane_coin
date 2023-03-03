@@ -240,6 +240,18 @@ h2 {
   border-radius: 50%;
   background-color: rgb(255, 187, 0);
   margin: 10px 0;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 .line_top {
