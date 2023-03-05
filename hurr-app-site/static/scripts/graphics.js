@@ -1,14 +1,21 @@
 Chart.defaults.global.legend.display = false;
 var ctx = document.getElementById("myChart");
 
+var newPrice = ethPrice;
+var newTime = updateTimes;
+
+console.log(newPrice, newTime);
+
+
+function Grath() {
 const myChart = new Chart(ctx, {
     type: "line",
     data: {
-      labels: updateTimes,
+      labels: newTime,
       datasets: [
         {
           label: "Hurricane Price",
-          data: ethPrice,
+          data: newPrice,
           backgroundColor: "RGBA(255,145,0,1)",
           borderColor: "RGBA(255,145,0,1)",
           color: '#FFFFFF',
@@ -19,3 +26,6 @@ const myChart = new Chart(ctx, {
       ]
     }
   });
+}
+
+setInterval(Grath, 3 * 1000);

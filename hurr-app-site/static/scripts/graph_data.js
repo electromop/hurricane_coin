@@ -18,7 +18,9 @@ function updateEthPrice() {
         }
         ethPrice.push(Object.values(data));
         updateTimes.push(Object.keys(data)[0].slice(10));
-        console.log('myChart updated:', ethPrice, updateTimes);
+        // console.log('myChart updated:', ethPrice, updateTimes);\
+        console.log(ethPrice);
+        console.log(updateTimes);
       });
     // ethPrice_1 = ethPrice;
     // updateTimes_1 = updateTimes;
