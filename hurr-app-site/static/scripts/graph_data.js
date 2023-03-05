@@ -1,8 +1,8 @@
 var ethPrice = [];
 var updateTimes = [];
 
-var ethPrice_1 = [];
-var updateTimes_1 = [];
+// var ethPrice_1 = [];
+// var updateTimes_1 = [];
 
 
 function updateEthPrice() {
@@ -11,18 +11,19 @@ function updateEthPrice() {
       .then(data => {
         if (ethPrice.length == 10)
         {
+          if (updateTimes.length == 10) {
               ethPrice.shift();
               updateTimes.shift();
+          }
         }
         ethPrice.push(Object.values(data));
         updateTimes.push(Object.keys(data)[0].slice(10));
         console.log('myChart updated:', ethPrice, updateTimes);
       });
-      localStorage.setItem(ethPrice, updateTimes);
-    ethPrice_1 = ethPrice;
-    updateTimes_1 = updateTimes;
-    console.log('myChart_1 updated:', ethPrice_1, updateTimes_1)
+    // ethPrice_1 = ethPrice;
+    // updateTimes_1 = updateTimes;
+    // console.log('myChart_1 updated:', ethPrice_1, updateTimes_1)
   }
   
   // вызываем функцию updateEthPrice каждый час
-  setInterval(updateEthPrice, 60 * 1000);
+  setInterval(updateEthPrice, 3 * 1000);

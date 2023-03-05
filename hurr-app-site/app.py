@@ -5,7 +5,7 @@ import datetime, time, json
 
 
 def openCData():
-    with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json') as c:
+    with open(r'C:\Users\mlips\code\git\hurricane_coin\hurr-app-site\data\currency.json') as c:
         currencyInfo = json.load(c)
         return currencyInfo
 
@@ -22,7 +22,7 @@ def get_price(params, api_key):
 
 def fill_bd():
     while True:
-        with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json') as d:
+        with open(r'C:\Users\mlips\code\git\hurricane_coin\hurr-app-site\data\currency.json') as d:
             currencyInfo = json.load(d)
     
         token_info = get_price(params, api_key)
@@ -30,7 +30,7 @@ def fill_bd():
         current_date = str(datetime.datetime.now())[:19]
         currencyInfo[current_date] = token_price
 
-        with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json', 'w') as j:
+        with open(r'C:\Users\mlips\code\git\hurricane_coin\hurr-app-site\data\currency.json', 'w') as j:
             j.write(json.dumps(currencyInfo))
     
         time.sleep(60.0)
