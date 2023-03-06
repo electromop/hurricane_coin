@@ -1,10 +1,10 @@
-// Chart.defaults.global.legend.display = false;
-var ctx = document.getElementById("myChart");
+Chart.defaults.global.legend.display = false;
+var ctx = document.getElementById('myChart');
 
 var mine = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var mine_1 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o'];
 
-  var myChart = new Chart(ctx, {
+    Chart = new Chart(ctx, {
     type: "line",
     data: {
       labels: mine,
