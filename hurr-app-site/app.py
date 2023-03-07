@@ -62,7 +62,7 @@ def get_all_info():
 @app.route('/hurricane/api/v1.0/hurr-rate/last-rate', methods=['GET'])
 def get_last_info():
     currencyInfo = openCData()
-    lastRate = pairById(currencyInfo, -10)
+    lastRate = pairById(currencyInfo, -20)
     return jsonify(lastRate)
 
 if __name__ == "__main__":

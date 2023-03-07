@@ -27,25 +27,47 @@ var now = new Date();
 
 var ctx = document.getElementById("myChart");
 
+var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: updateTimes,
+      datasets: [
+        {
+          label: "Hurricane Price",
+          data: ethPrice,
+          backgroundColor: "RGBA(255,145,0,1)",
+          borderColor: "RGBA(255,145,0,1)",
+          color: '#FFFFFF',
+          borderWidth: 1,
+          fill: false,
+          lineTension: 0.3
+        }
+      ]
+    }
+  });
+
 // var kurs = [0.0015, 0.008, 0.009, 0.0012, 0.0022, 0.001];
 // var time = ['13:59', '14:00', '14:01', '14:02', '14:03'];
 
-
-var myChart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels: data_Collection,
-    datasets: [
-      {
-        label: "Hurricane Price",
-        data: data_Collection_1,
-        backgroundColor: "RGBA(255,145,0,1)",
-        borderColor: "RGBA(255,145,0,1)",
-        color: '#FFFFFF',
-        borderWidth: 1,
-        fill: false,
-        lineTension: 0.3
-      }
-    ]
-  }
-});
+function  govno() {
+  myChart.destroy();
+  myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: updateTimes,
+      datasets: [
+        {
+          label: "Hurricane Price",
+          data: ethPrice,
+          backgroundColor: "RGBA(255,145,0,1)",
+          borderColor: "RGBA(255,145,0,1)",
+          color: '#FFFFFF',
+          borderWidth: 1,
+          fill: false,
+          lineTension: 0.3
+        }
+      ]
+    }
+  });
+}
+setInterval(govno, 15 * 1000);
