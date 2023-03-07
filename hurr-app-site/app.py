@@ -5,14 +5,18 @@ import datetime, time, json
 
 
 def openCData():
-    with open(r'C:\Users\mlips\code\git\hurricane_coin\hurr-app-site\data\currency.json') as c:
+    with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json') as c:
         currencyInfo = json.load(c)
         return currencyInfo
 
-def pairById(indict, ind):
-    key = list(indict.keys())[ind]
-    value = indict[list(indict.keys())[ind]]
-    return {key : value}
+def pairById(indict, id):
+    keys = list(indict.keys())[id:]
+    values = list(indict.values())[id:]
+    ret_dict = {}
+    for k in keys:
+        for v in values:
+            ret_dict[k] = v
+    return ret_dict
 
 def get_price(params, api_key):
     price = evm_api.token.get_token_price(
@@ -22,7 +26,7 @@ def get_price(params, api_key):
 
 def fill_bd():
     while True:
-        with open(r'C:\Users\mlips\code\git\hurricane_coin\hurr-app-site\data\currency.json') as d:
+        with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json') as d:
             currencyInfo = json.load(d)
     
         token_info = get_price(params, api_key)
@@ -30,7 +34,7 @@ def fill_bd():
         current_date = str(datetime.datetime.now())[:19]
         currencyInfo[current_date] = token_price
 
-        with open(r'C:\Users\mlips\code\git\hurricane_coin\hurr-app-site\data\currency.json', 'w') as j:
+        with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json', 'w') as j:
             j.write(json.dumps(currencyInfo))
     
         time.sleep(60.0)
@@ -58,7 +62,7 @@ def get_all_info():
 @app.route('/hurricane/api/v1.0/hurr-rate/last-rate', methods=['GET'])
 def get_last_info():
     currencyInfo = openCData()
-    lastRate = pairById(currencyInfo, -1)
+    lastRate = pairById(currencyInfo, -10)
     return jsonify(lastRate)
 
 if __name__ == "__main__":
