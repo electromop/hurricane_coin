@@ -1,36 +1,27 @@
-var ethPrice = [1];
-var updateTimes = [1];
+var ethPrice = [];
+var ethTime = [];
+var ethPrice_1 = [];
+var ethTime_1 = [];
 
-function updateEthPrice() {
-  fetch('http://127.0.0.1:5000/hurricane/api/v1.0/hurr-rate/last-rate')
-    .then(response => response.json())
-    .then(data => {
+function getEthData() {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://127.0.0.1:5000/hurricane/api/v1.0/hurr-rate/last-rate', true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText);
       ethPrice = Object.values(data);
-    });
-  console.log('ep ', ethPrice)
-  return ethPrice;
+      ethTime = Object.keys(data);
+      ethPrice_1 = Object.values(data);
+      ethTime_1 = Object.keys(data);
+      console.log(`Current ETH price: $${ethPrice}`);
+      console.log(`Current ETH time: $${ethTime}`);
+    } else {
+      console.error('Error while fetching ETH price');
+    }
+  };
+  xhr.send();
 }
 
-function updateEthTime() {
-  fetch('http://127.0.0.1:5000/hurricane/api/v1.0/hurr-rate/last-rate')
-    .then(response => response.json())
-    .then(data => {
-      updateTimes = Object.keys(data); //[0].slice(10)
-    });
-  console.log('et ', updateTimes)
-  return updateTimes;
-}
+getEthData();
 
-function setIntervalImmediately(func, interval) {
-  return setInterval(func, interval);
-}
-
-setIntervalImmediately(updateEthPrice, 15 * 1000);
-setIntervalImmediately(updateEthTime, 15 * 1000)
-
-
-// вызываем функцию updateEthPrice каждый час
-// setInterval(updateEthPrice, 15 * 1000);
-// setInterval(updateEthTime, 15 * 1000);
-// setInterval(() => console.log(data_Collection), 2000);
-// setInterval(() => console.log(data_Collection_1), 2000);
+setInterval(getEthData, 2 * 1000);
