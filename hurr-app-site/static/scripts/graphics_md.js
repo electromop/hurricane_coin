@@ -41,4 +41,4 @@ function govno() {
     }
   });
 }
-setInterval(govno, 2 * 1000);
+setInterval(govno, 11 * 60 * 1000);

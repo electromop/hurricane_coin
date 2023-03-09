@@ -24,4 +24,4 @@ function getEthData() {
 
 getEthData();
 
-setInterval(getEthData, 2 * 1000);
+setInterval(getEthData, 11 * 60 * 1000);

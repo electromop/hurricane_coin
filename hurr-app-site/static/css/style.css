@@ -219,6 +219,7 @@ h2 {
   padding: 10px;
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
 
 .line {
@@ -238,7 +239,7 @@ h2 {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: rgb(255, 187, 0);
+  background-color: rgb(239, 174, 11);
   margin: 10px 0;
   animation-duration: 3s;
   animation-name: slidein;
