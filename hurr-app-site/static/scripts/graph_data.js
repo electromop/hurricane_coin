@@ -5,7 +5,7 @@ var ethTime_1 = [];
 
 function getEthData() {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://127.0.0.1:5000/hurricane/api/v1.0/hurr-rate/last-rate', true);
+  xhr.open('GET', 'http://127.0.0.1:8090/hurricane/api/v1.0/hurr-rate/last-rate', true);
   xhr.onload = function() {
     if (xhr.status === 200) {
       const data = JSON.parse(xhr.responseText);

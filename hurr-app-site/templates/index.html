@@ -20,18 +20,22 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-end me-2 justify-content-sm-center" id="navbarNavAltMarkup">
+                    <div class="collapse navbar-collapse justify-content-end me-2" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                                <a class="btn btn-outline-warning rounded-5 px-4 me-3" id="menu_button" aria-current="page" href="#tokenomics" role="button", style="max-width: 175px;">Tokenomics</a>
-                                <a class="btn btn-outline-warning rounded-5 px-3 me-3" id="menu_button" href="#roadmap" role="button", style="max-width: 175px;">Roadmap</a>
-                                <a class="btn btn-outline-warning rounded-5 px-3 me-3" id="menu_button" href="#team" role="button", style="max-width: 175px;">About us</a>
+                                <a class="btn btn-outline-warning rounded-5 px-4 me-3 d-none d-md-block" id="menu_button" aria-current="page" href="#tokenomics" role="button", style="max-width: 175px;">Tokenomics</a>
+                                <a class="btn btn-outline-warning rounded-5 px-3 me-3 d-none d-md-block" id="menu_button" href="#roadmap" role="button", style="max-width: 175px;">Roadmap</a>
+                                <a class="btn btn-outline-warning rounded-5 px-3 me-3 d-none d-md-block" id="menu_button" href="#team" role="button", style="max-width: 175px;">About us</a>
+
+                                <a class="btn btn-outline-warning d-md-none mt-1 mb-2" id="menu_button_2" aria-current="page" href="#tokenomics" role="button">Tokenomics</a>
+                                <a class="btn btn-outline-warning d-md-none mb-2" id="menu_button_2" href="#roadmap" role="button">Roadmap</a>
+                                <a class="btn btn-outline-warning d-md-none mb-1" id="menu_button_2" href="#team" role="button">About us</a>
                         </div>
                     </div>
                 </div>
             </nav>
         </header>
         <section>
-            <div class="container-md my-5">
+            <div class="container-md my-md-5">
                 <div class="row justify-content-center rounded-1 z-0" id="row-hide">
                     <div class="col-sm-1 col-md-2 mt-5 d-flex justify-content-center">
                         <h1 id="typewriter">Hi &ltuser&gt!</h1>
@@ -39,7 +43,7 @@
                 </div>
                 <div class="box1">
                     <div class="container-md justify-content-center rounded-1 h-100">
-                        <div class="row py-3 my-3">
+                        <div class="row py-3">
                             <div class="col-sm-12 col-md-6">
                                 <div class="row">
                                     <h1>$HURRICANE is the best way to increase money value on your wallet.</h1>
@@ -104,21 +108,14 @@
                             <p>2. Second, it is a function of burning a portion of the tokens in the liquidity pool each time HURRICANE is bought or sold on the exchange, reducing the total volume of tokens issued and increasing their value in the wallets of the holders.</p>
                         </div>
                     </div>
-                    <script src="{{url_for('static', filename='scripts/graph_data.js')}}"></script>
                     <div class="d-none d-md-block col-md-8 mt-4">
-                        <div class="chart-container" style="width: 100%; margin-left: auto;">
-                            <canvas id="myChart">
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-                                <script src="{{ url_for('static', filename='scripts/graphics_md.js') }}"></script>
-                            </canvas>
+                        <div class="chartBox">
+                            <canvas id="myChart"></canvas>
                         </div>
                     </div>
                     <div class="d-md-none col-sm-12 mt-4">
-                        <div class="chart-container" style="width: 100%; margin-right: auto;">
-                            <canvas id="myChart_1">
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-                                <script src="{{ url_for('static', filename='scripts/graphics_sm.js') }}"></script>
-                            </canvas>
+                        <div class="chartBox" style="width: 100%; margin-right: auto;">
+                            <canvas id="myChart_1"></canvas>
                         </div>
                     </div> 
                 </div>
@@ -172,6 +169,7 @@
             </div>
         </section>
         <section>
+            <a name="team"></a>
             <div class="container-md box2 shadow rounded-2 bg-body-tertiary d-none d-md-block my-5">
                 <div class="row">
                     <div class="col">
@@ -180,7 +178,6 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <a name="team"></a>
                         <div id="carouselExampleIndicators" class="carousel slide">
                             <div class="carousel-indicators">
                               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -318,10 +315,13 @@
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-10 d-flex justify-content-center t-3 pb-4">
                                         <div class="card my-2" style="width: 18rem;">
-                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="{{ url_for('static', filename='logos/city1.png') }}">
+                                            <img src="{{ url_for('static', filename='logos/portraits/kuznets.png') }}" class="card-img-top" alt="{{ url_for('static', filename='logos/city1.png') }}">
                                             <div class="card-body">
-                                                <h5 class="card-title">Card 4</h5>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <h5 class="card-title">Nikita</h5>
+                                                <p class="card-text">&middot SMM, communication with the target audience</p>
+                                                <p class="card-text">&middot Design (brand)</p>
+                                                <p class="card-text">&middot Intermediary between IT and ordinary people</p>
+                                                <p class="card-text">&middot Control / accounting in the team</p>
                                             </div>
                                         </div>
                                     </div>
@@ -331,9 +331,9 @@
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-10 d-flex justify-content-center t-3 pb-4">
                                         <div class="card my-2" style="width: 18rem;">
-                                            <img src="{{ url_for('static', filename='logos/animoji.png') }}" class="card-img-top" alt="{{ url_for('static', filename='logos/city1.png') }}">
+                                            <img src="{{ url_for('static', filename='logos/portraits/german.png') }}" class="card-img-top" alt="{{ url_for('static', filename='logos/city1.png') }}">
                                             <div class="card-body">
-                                                <h5 class="card-title">Card 5</h5>
+                                                <h5 class="card-title">German</h5>
                                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                             </div>
                                         </div>
@@ -354,13 +354,13 @@
                                 </div>
                               </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
                             </button>
                           </div>
                     </div>
@@ -420,7 +420,10 @@
                 </div>
             </div>
         </section>
-
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="{{url_for('static', filename='scripts/graph_data.js')}}"></script>
+        <script src="{{ url_for('static', filename='scripts/graphics_md.js') }}"></script>
+        <script src="{{ url_for('static', filename='scripts/graphics_sm.js') }}"></script>
         <script src="{{ url_for('static', filename='scripts/preloading.js') }}"></script>
         <script src="{{ url_for('static', filename='scripts/anim_unhide.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

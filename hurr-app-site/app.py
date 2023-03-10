@@ -8,14 +8,13 @@ def openCData():
         currencyInfo = json.load(c)
         return currencyInfo
 
-def pairById(indict, id):
+def lastDict(indict, id):
     keys = list(indict.keys())[id:]
     values = list(indict.values())[id:]
-    ret_dict = {}
-    for k in keys:
-        for v in values:
-            ret_dict[k] = v
-    return ret_dict
+    last_dict = {}
+    for i in range(len(keys)):
+        last_dict[keys[i]] = values[i]
+    return last_dict
 
 def get_price(params, api_key):
     price = evm_api.token.get_token_price(
@@ -30,7 +29,7 @@ def fill_bd():
         
         token_info = get_price(params, api_key)
         token_price = token_info['usdPrice']
-        current_date = str(datetime.datetime.now())[11:19]
+        current_date = str(datetime.datetime.now())[:19]
         currencyInfo[current_date] = token_price
         print('Updated info: ', token_price, current_date)
 
@@ -62,8 +61,8 @@ def get_all_info():
 @app.route('/hurricane/api/v1.0/hurr-rate/last-rate', methods=['GET'])
 def get_last_info():
     currencyInfo = openCData()
-    lastRate = pairById(currencyInfo, -20)
+    lastRate = lastDict(currencyInfo, -20)
     return jsonify(lastRate)
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=8090, debug=True)

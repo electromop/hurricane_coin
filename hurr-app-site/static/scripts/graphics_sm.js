@@ -1,7 +1,8 @@
-var now = new Date();
-// var ctx = document.getElementById("myChart_1");
+// var now = new Date();
+var ctx_sm = document.getElementById("myChart_1");
+Chart.defaults.font.size = 7;
 
-var myChart_1 = new Chart(document.getElementById("myChart_1"), {
+var myChart_1 = new Chart(ctx_sm, {
     type: "line",
     data: {
       labels: ethTime,
@@ -19,6 +20,7 @@ var myChart_1 = new Chart(document.getElementById("myChart_1"), {
       ]
     }
   });
+console.log("sm was made");
 
 // function govno() {
 //   myChart_1.destroy();
