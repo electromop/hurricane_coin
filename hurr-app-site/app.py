@@ -4,7 +4,7 @@ from moralis import evm_api
 import datetime, time, json
 
 def openCData():
-    with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json') as c:
+    with open(r'C:\Users\user\Documents\GitHub\hurricane_coin\hurr-app-site\data\currency.json') as c:
         currencyInfo = json.load(c)
         return currencyInfo
 
@@ -24,16 +24,16 @@ def get_price(params, api_key):
 
 def fill_bd():
     while True:
-        with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json') as d:
+        with open(r'C:\Users\user\Documents\GitHub\hurricane_coin\hurr-app-site\data\currency.json') as d:
             currencyInfo = json.load(d)
         
         token_info = get_price(params, api_key)
         token_price = token_info['usdPrice']
-        current_date = str(datetime.datetime.now())[:19]
+        current_date = str(datetime.datetime.now())[11:19]
         currencyInfo[current_date] = token_price
         print('Updated info: ', token_price, current_date)
 
-        with open(r'C:\Users\user\Desktop\codes\__projects\hurricane_coin\hurr-app-site\data\currency.json', 'w') as j:
+        with open(r'C:\Users\user\Documents\GitHub\hurricane_coin\hurr-app-site\data\currency.json', 'w') as j:
             j.write(json.dumps(currencyInfo))
         time.sleep(60.0 * updateTime)
 
@@ -42,7 +42,7 @@ params = {
     "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
     "chain": "eth"
 }
-updateTime = 10 #update interval in minutes
+updateTime = 30 #update interval in minutes
 
 thread1 = Thread(target=fill_bd, args=(), daemon=True) # Создаем поток
 thread1.start()
